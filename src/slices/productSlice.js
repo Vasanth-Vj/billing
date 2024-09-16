@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { format, startOfDay, endOfDay, startOfMonth, endOfMonth } from 'date-fns';
 
 const initialState = {
   products: [],
@@ -7,9 +8,11 @@ const initialState = {
   billingPrice: 0,
   customer: {
     name: "",
+    phone: "",
     location: "",
     date: new Date().toLocaleDateString(),
   },
+  billingRecords: [],
 };
 
 const productSlice = createSlice({
@@ -47,6 +50,12 @@ const productSlice = createSlice({
     updateCustomerDetails: (state, action) => {
       state.customer = { ...state.customer, ...action.payload };
     },
+    addBillingRecord(state, action) { 
+      state.billingRecords.push(action.payload);
+    },
+    clearProducts(state) { 
+      state.products = [];
+    },
   },
 });
 
@@ -55,5 +64,44 @@ export const {
   deleteProduct,
   applyDiscount,
   updateCustomerDetails,
+  addBillingRecord,
+  clearProducts,
 } = productSlice.actions;
 export default productSlice.reducer;
+
+// Selectors
+export const selectTodayTotals = (state) => {
+  const todayStart = startOfDay(new Date());
+  const todayEnd = endOfDay(new Date());
+  const todayRecords = state.products.billingRecords.filter(record =>
+    new Date(record.date) >= todayStart && new Date(record.date) <= todayEnd
+  );
+  
+  return todayRecords.reduce((totals, record) => {
+    if (record.paymentStatus === "Pay Now") {
+      totals.payNow += record.billingPrice;
+    } else {
+      totals.payLater += record.billingPrice;
+    }
+    totals.total += record.billingPrice;
+    return totals;
+  }, { payNow: 0, payLater: 0, total: 0 });
+};
+
+export const selectOneMonthTotals = (state) => {
+  const monthStart = startOfMonth(new Date());
+  const monthEnd = endOfMonth(new Date());
+  const monthRecords = state.products.billingRecords.filter(record =>
+    new Date(record.date) >= monthStart && new Date(record.date) <= monthEnd
+  );
+
+  return monthRecords.reduce((totals, record) => {
+    if (record.paymentStatus === "Pay Now") {
+      totals.payNow += record.billingPrice;
+    } else {
+      totals.payLater += record.billingPrice;
+    }
+    totals.total += record.billingPrice;
+    return totals;
+  }, { payNow: 0, payLater: 0, total: 0 });
+};
