@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ['Inter'],
+        SfPro: ['"SF Pro Display"', 'sans-serif'],
+      },
+      boxShadow: {
+        'custom-normal': '0px 4px 30px 0px rgba(26, 28, 33, 0.05)',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,4 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* src/index.css */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../src/assets/fonts/SF-Pro-Display-Regular.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SF Pro Display';
+    src: url('./assets/fonts/SF-Pro-Display-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* Optional: Set the body to use SF Pro Display by default */
+  body {
+    font-family: 'SF Pro Display', sans-serif;
+  }
+  

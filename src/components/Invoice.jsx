@@ -9,7 +9,7 @@ import {
   clearProducts,
 } from "../slices/productSlice";
 
-const Billing = () => {
+const Invoice = () => {
   const dispatch = useDispatch();
   const {
     products,
@@ -281,4 +281,4 @@ const Billing = () => {
   );
 };
 
-export default Billing;
+export default Invoice;
