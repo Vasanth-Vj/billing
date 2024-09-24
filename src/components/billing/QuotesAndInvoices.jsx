@@ -10,7 +10,7 @@ const QuotesAndInvoices = () => {
   const navigate = useNavigate();
 
   const ViewInvoice = () => {
-    navigate("/main/view-invoice");
+    navigate("/view-invoice");
   };
   return (
     <div className="bg-[#FAFAFA]">

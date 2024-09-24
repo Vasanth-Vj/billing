@@ -347,7 +347,7 @@ const Preview = () => {
         <hr className="mt-[60px] border border-[#898989]" />
         {/* Bottom Row */}
         <div className="flex justify-center gap-[100px] mt-[50px] mb-[77px]">
-          <Link to="/main/create-invoice">
+          <Link to="/create-invoice">
             <button className="flex gap-4 items-center">
               <Bs1Circle className="w-6 h-6 text-[#9C9C9C]" />
               <p  className="text-[#9C9C9C] text-center font-inter text-[14px] font-normal leading-[140%] tracking-[0.07px]">Add Invoice details</p>

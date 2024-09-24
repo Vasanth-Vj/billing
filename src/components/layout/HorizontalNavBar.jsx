@@ -24,19 +24,19 @@ const HorizontalNavBar = () => {
   const getRouteName = () => {
     const path = location.pathname;
     const routes = {
-      "/main": "Dashboard",
-      "/main/create-invoice": "Create New Invoice",
-      "/main/invoices": "Billing",
-      "/main/view-invoice": "Invoices Details",
-      "/main/preview": "Create New Invoice",
-      "/main/products": "Products & Services",
-      "/main/clients": "Clients",
-      "/main/invoice": "Invoice",
-      "/main/history": "History",
+      "/": "Dashboard",
+      "/create-invoice": "Create New Invoice",
+      "/invoices": "Billing",
+      "/view-invoice": "Invoices Details",
+      "/preview": "Create New Invoice",
+      "/products": "Products & Services",
+      "/clients": "Clients",
+      "/invoice": "Invoice",
+      "/history": "History",
 
-      "/main/profile": "Profile",
-      "/main/account": "Settings",
-      "/main/advisor": "My Advisor",
+      "/profile": "Profile",
+      "/account": "Settings",
+      "/advisor": "My Advisor",
       "/help-center": "Help Center",
     };
     return routes[path] || "Home";

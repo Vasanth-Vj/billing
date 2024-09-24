@@ -25,7 +25,7 @@ const VerticalNavBar = ({ isOpen, toggleSideNav }) => {
   const Menus = [
     {
       title: "Dashboard",
-      path: "/main",
+      path: "/",
       icon: <RxDashboard className="h-6 w-6" />,
     },
     {
@@ -34,20 +34,20 @@ const VerticalNavBar = ({ isOpen, toggleSideNav }) => {
 
       submenu: true,
       submenuItems: [
-        { title: "Create Invoice", path: "/main/create-invoice" },
-        { title: "Quotes & Invoices", path: "/main/invoices" },
-        { title: "Clients", path: "/main/clients" },
+        { title: "Create Invoice", path: "/create-invoice" },
+        { title: "Quotes & Invoices", path: "/invoices" },
+        { title: "Clients", path: "/clients" },
       ],
       routes: ["create-invoice", "invoice", "clients"],
     },
     {
       title: "Invoice",
-      path: "/main/invoice",
+      path: "/invoice",
       icon: <TbFileInvoice className="h-6 w-6" />,
     },
     {
       title: "History",
-      path: "/main/history",
+      path: "/history",
       icon: <TbClipboardText className="h-6 w-6" />,
     },
     {
@@ -55,8 +55,8 @@ const VerticalNavBar = ({ isOpen, toggleSideNav }) => {
       icon: <IoSettingsOutline className="h-6 w-6" />,
       submenu: true,
       submenuItems: [
-        { title: "Profile", path: "/main/profile" },
-        { title: "Account", path: "/main/account" },
+        { title: "Profile", path: "/profile" },
+        { title: "Account", path: "/account" },
       ],
       routes: ["profile", "account"],
     },
@@ -65,12 +65,12 @@ const VerticalNavBar = ({ isOpen, toggleSideNav }) => {
   const BottomMenus = [
     {
       title: "My Advisor",
-      path: "/main/advisor",
+      path: "/advisor",
       icon: <RiMessage2Line className="h-6 w-6" />,
     },
     {
       title: "Help Center",
-      path: "/main/help-center",
+      path: "/help-center",
       icon: <IoCallOutline className="h-6 w-6" />,
     },
   ];

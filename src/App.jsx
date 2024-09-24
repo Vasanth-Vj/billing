@@ -18,8 +18,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/main" element={<Main />}>
+        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<Main />}>
           <Route index element={<Dashboard />} />
           <Route path="create-invoice" element={<CreateInvoice />} />
           <Route path="invoices" element={<QuotesAndInvoices />} />

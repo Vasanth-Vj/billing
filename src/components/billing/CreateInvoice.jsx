@@ -12,7 +12,7 @@ const CreateInvoice = () => {
   const navigate = useNavigate();
 
   const PreviewButton = () => {
-    navigate("/main/preview");
+    navigate("/preview");
   };
   return (
     <div className="bg-[#FAFAFA]">
